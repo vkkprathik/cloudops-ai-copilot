@@ -2,7 +2,7 @@ from groq import Groq
 from dotenv import load_dotenv
 import os
 from services.project_explainer_agent import PROJECT_EXPLAINER_PROMPT
-from rag.vector_store import search_knowledge
+#from rag.vector_store import search_knowledge
 from services.architecture_agent import ARCHITECTURE_PROMPT
 from services.prompts import (
     AWS_PROMPT,
@@ -69,9 +69,7 @@ def get_ai_response(
 
         if agent_key in rag_agents:
 
-            rag_context = search_knowledge(
-                question
-            )
+            rag_context = ""
 
             print("\n========== RAG SEARCH ==========")
             print(question)
