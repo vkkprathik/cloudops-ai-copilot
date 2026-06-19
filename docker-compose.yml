@@ -1,0 +1,21 @@
+services:
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: cloudops-api
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    restart: always
+
+  ui:
+    build:
+      context: .
+      dockerfile: Dockerfile.streamlit
+    container_name: cloudops-ui
+    ports:
+      - "8501:8501"
+    restart: always
